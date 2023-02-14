@@ -17,13 +17,11 @@ public class GasStationController {
         this.gasStationService = gasStationService;
     }
     
-    @CrossOrigin(origins = "https://makpetrol.herokuapp.com/")
     @GetMapping(path = "/get-gas-stations", produces = "application/json")
     public List<GasStationEntity> getGasStations(@RequestParam(name = "city") String city) {
         return gasStationService.findAllGasStationsInCity(city);
     }
     
-    @CrossOrigin(origins = "https://makpetrol.herokuapp.com/")
     @GetMapping(path = "/get-all-gas-stations", produces = "application/json")
     public List<GasStationEntity> getAllGasStations() {
         return gasStationService.getAllStations();
